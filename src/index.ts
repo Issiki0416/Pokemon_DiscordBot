@@ -129,4 +129,4 @@ client.on("messageCreate", async (msg: Message) => {
   }
 });
 
-client.login(process.env.TOKEN);
+client.login();
