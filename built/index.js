@@ -13,7 +13,6 @@ const Pokemon_1 = require("./Pokemon");
 client.once("ready", () => {
     console.log("Ready!");
     if (client.user) {
-        console.log(client.user.tag);
     }
 });
 client.on("messageCreate", async (msg) => {
@@ -26,7 +25,6 @@ client.on("messageCreate", async (msg) => {
         let req_pokemonName = msg.content.slice(1);
         let found_pokemon = Pokemon_1.pokemon.choosePokemon(req_pokemonName);
         found_pokemon.forEach((data) => {
-            console.log(data);
             let fields = [
                 {
                     name: "HP",
@@ -75,9 +73,6 @@ client.on("messageCreate", async (msg) => {
             else {
                 thumbnailUrl = `https://www.serebii.net/sunmoon/pokemon/${data.no < 10 ? "00" : data.no < 100 ? "0" : ""}${data.no}.png`;
             }
-            console.log(data);
-            console.log(thumbnailUrlRandom);
-            console.log(thumbnailUrl);
             thumbnailUrl = Pokemon_1.pokemon.getMegaEvolution(data, thumbnailUrl);
             let exampleEmbed = new discord_js_1.MessageEmbed()
                 .setTitle(data.name)

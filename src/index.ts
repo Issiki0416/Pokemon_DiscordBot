@@ -16,7 +16,7 @@ client.once("ready", () => {
   // console.log(client.user?.tag);//client.user?ないならやんないであるならやって
   if (client.user) {
     //client.user(ボットの情報)
-    console.log(client.user.tag);
+    // console.log(client.user.tag);
   }
   // console.log(client.user.tag);
 });
@@ -38,7 +38,7 @@ client.on("messageCreate", async (msg: Message) => {
     //returnされたポケモンを配列に格納
     let found_pokemon: pokemon[] = pokemon.choosePokemon(req_pokemonName);
     found_pokemon.forEach((data) => {
-      console.log(data);
+      // console.log(data);
       //文字列なんだけども実際の中身はオブジェクトなのでエラーが出た
       let fields = [
         {
@@ -98,9 +98,9 @@ client.on("messageCreate", async (msg: Message) => {
           data.no < 10 ? "00" : data.no < 100 ? "0" : ""
         }${data.no}.png`;
       }
-      console.log(data);
-      console.log(thumbnailUrlRandom);
-      console.log(thumbnailUrl); //とれてる
+      // console.log(data);
+      // console.log(thumbnailUrlRandom);
+      // console.log(thumbnailUrl); //とれてる
       //@ts-ignore
       thumbnailUrl = pokemon.getMegaEvolution(data, thumbnailUrl);
 
